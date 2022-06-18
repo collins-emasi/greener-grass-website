@@ -1,0 +1,175 @@
+{% extends 'portal/base.html' %}
+{% load static %}
+
+
+{% block title %}
+{% endblock title %}
+
+{% block main_content %}
+    <div class="main_content_iner overly_inner ">
+        <div class="container-fluid p-0 ">
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="main-title mb_30">
+                        <h3 class="m-0">Welcome Back, Mr. {{ request.user.username }}</h3>
+                    </div>
+                </div>
+                <div class="col-lg-6 ">
+                    <div class="white_card card_height_100 mb_30">
+                        <div class="white_card_header pb-0">
+                            <div class="box_header m-0">
+                            </div>
+                        </div>
+                        <div class="white_card_body">
+                            <div class="media mb_30 border_bottom_1px pb-3">
+                                <img class="mr-3 rounded-circle mr-0 mr-sm-3" src="{% static 'portal/img/transfer/user.png' %}" alt="" width="60"
+                                     height="60">
+                                <div class="media-body">
+                                    <span>Hello</span>
+                                    <h4 class="mb-2">{{ request.user.username }}</h4>
+                                    <p class="mb-1"><span><i class="fa fa-phone mr-2 text-primary"></i></span>(+254) 790 865 836</p>
+                                    <p class="mb-1"><span><i class="fa fa-envelope mr-2 text-primary"></i></span>
+                                        <a href="https://demo.dashboardpack.com/cdn-cgi/l/email-protection"
+                                           class="__cf_email__" data-cfemail="3c54595050537c59445d514c5059125f5351">[email&#160;protected]</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <ul class="card-profile__info">
+                                <li>
+                                    <h5 class="mr-4">Address</h5>
+                                    <span class="text-muted">House 14, Road 9, Nyeri, DeKUT</span>
+                                </li>
+                                <li class="mb-1">
+                                    <h5 class="mr-4">Total Log</h5>
+                                    <span>103 Time (Today 5 Times)</span>
+                                </li>
+                                <li>
+                                    <h5 class="text-danger mr-4">Last Log</h5>
+                                    <span class="text-danger">14 March, 2022, 2:00 PM</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="white_card card_height_100 mb_30">
+                        <div class="white_card_header">
+                            <div class="white_box_tittle">
+                                <h4>Withdraw</h4>
+                            </div>
+                        </div>
+                        <div class="white_card_body">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <label>Amount</label>
+                                    <div class="common_input mb_20">
+                                        <input type="text" placeholder="KSH.500">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <label>Bank</label>
+                                    <select class="nice_Select2 nice_Select_line wide mb_20" style="display: none;">
+                                        <option value="1">Equity Bank</option>
+                                        <option value="1">KCB Bank</option>
+                                        <option value="1">Barclays Bank</option>
+                                        <option value="1">Family Bank</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <div class="create_report_btn mt_30">
+                                        <a href="#" class="btn_1 w-100">SEND</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="white_card mb_30 card_height_100">
+                        <div class="white_card_header pb-0">
+                            <div class="box_header m-0">
+                                <div class="main-title">
+                                    <h3 class="m-0">All Activities</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="white_card_body pt-0">
+                            <div class="QA_section">
+                                <div class="QA_table mb-0 transaction-table">
+
+                                    <div class="table-responsive">
+                                        <table class="table  ">
+                                            <tbody>
+                                            <tr>
+                                                <td scope="row">
+                                                    <span class="sold-thumb"><i class="ti-arrow-up"></i></span>
+                                                </td>
+                                                <td>
+                                                    <span class="badge badge-danger">Sold</span>
+                                                </td>
+                                                <td><img class="small_img" src="img/currency/1.svg" alt=""> Bitcoin</td>
+                                                <td>Using - Bank......4585</td>
+                                                <td>-0.000234 BTC</td>
+                                                <td>-0.454 USD</td>
+                                            </tr>
+                                            <tr>
+                                                <td scope="row">
+                                                    <span class="buy-thumb"><i class="ti-arrow-down"></i></span>
+                                                </td>
+                                                <td>
+                                                    <span class="badge badge-success">Buy</span>
+                                                </td>
+                                                <td><img class="small_img" src="img/currency/2.svg" alt=""> Bitcoin</td>
+                                                <td>Using - Bank......4585</td>
+                                                <td>-0.000234 BTC</td>
+                                                <td>-0.454 USD</td>
+                                            </tr>
+                                            <tr>
+                                                <td scope="row">
+                                                    <span class="sold-thumb"><i class="ti-arrow-up"></i></span>
+                                                </td>
+                                                <td>
+                                                    <span class="badge badge-danger">Sold</span>
+                                                </td>
+                                                <td><img class="small_img" src="img/currency/4.svg" alt=""> Bitcoin</td>
+                                                <td>Using - Bank......4585</td>
+                                                <td>-0.000234 BTC</td>
+                                                <td>-0.454 USD</td>
+                                            </tr>
+                                            <tr>
+                                                <td scope="row">
+                                                    <span class="sold-thumb"><i class="ti-arrow-up"></i></span>
+                                                </td>
+                                                <td>
+                                                    <span class="badge badge-danger">Sold</span>
+                                                </td>
+                                                <td><img class="small_img" src="img/currency/3.svg" alt=""> Bitcoin</td>
+                                                <td>Using - Bank......4585</td>
+                                                <td>-0.000234 BTC</td>
+                                                <td>-0.454 USD</td>
+                                            </tr>
+                                            <tr>
+                                                <td scope="row">
+                                                    <span class="sold-thumb"><i class="ti-arrow-up"></i></span>
+                                                </td>
+                                                <td>
+                                                    <span class="badge badge-danger">Sold</span>
+                                                </td>
+                                                <td><img class="small_img" src="img/currency/1.svg" alt=""> Bitcoin</td>
+                                                <td>Using - Bank ......4585</td>
+                                                <td>-0.000234 BTC</td>
+                                                <td>-0.454 USD</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock main_content %}

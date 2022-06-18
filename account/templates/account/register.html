@@ -1,0 +1,43 @@
+{% extends "registration/base.html" %}
+{% load static %}
+
+{% block body %}
+    <section class="d-lg-flex justify-content-lg-center register-photo"
+             style="background: rgb(255,255,255);padding: 30px 0px;">
+        <!-- Start: Form Container -->
+        <div class="text-start border-success d-flex d-sm-flex d-md-flex d-lg-flex d-xl-flex d-xxl-flex flex-row justify-content-center justify-content-sm-center justify-content-md-center justify-content-lg-center justify-content-xl-center align-items-xl-center form-container"
+             style="border-color: rgb(255,255,255);height: 600px;margin-top: 50px;">
+            <form method="post" style="border-style: none;transform: scale(1);padding: 14px 60px;width: 444px;height: 600px;">
+                {% csrf_token %}
+                <img style="width: 300px; margin-top: 30px; margin-bottom: 30px" src="{% static 'portal/img/greener grass.png' %}" alt="">
+                <h2 class="text-center"><strong>Create</strong>&nbsp;an account</h2>
+{#                <div class="mb-3">#}
+{#                    <input class="border rounded-pill border-success form-control" type="email" name="email" placeholder="Email" required="">#}
+{#                </div>#}
+                {% if user_form.errors %}
+                    {% for key, error in user_form.errors.items %}
+                        <div style="color: red" class="mb-3">{{ error }}</div>
+                    {% endfor %}
+                {% endif %}
+                <div class="mb-3">{{ user_form.username }}</div>
+                <div class="mb-3">{{ user_form.email }}</div>
+                <div class="mb-3">{{ user_form.password }}</div>
+                <div class="mb-3">{{ user_form.password2 }}</div>
+                <div class="mb-3">
+                    <button class="btn btn-primary border rounded-pill d-block w-100" type="submit" style="background: var(--bs-green);">Sign Up</button>
+                </div>
+                <a class="already" href="{% url 'login' %}">Already have an account? Log in.</a><!-- Start: Social Icons -->
+                <div class="social-icons" style="height: 77px;padding: 46px 0px;"><a href="#"><i
+                        class="icon ion-social-twitter"
+                        style="color: var(--bs-green);border-color: var(--bs-green);"></i></a><a href="#"><i
+                        class="icon ion-social-facebook"
+                        style="color: var(--bs-green);border-color: var(--bs-green);"></i></a><a
+                        href="#"><i class="icon ion-social-google"
+                                    style="color: var(--bs-green);border-color: var(--bs-green);"></i></a><a
+                        href="#"></a>
+                </div><!-- End: Social Icons -->
+            </form>
+        </div><!-- End: Form Container -->
+    </section><!-- End: Registration Form with Photo -->
+{% endblock %}
+

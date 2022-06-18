@@ -1,0 +1,40 @@
+{% extends "registration/base.html" %}
+{% load static %}
+
+
+{% block title %}
+    Login | GreenerGrass
+{% endblock title %}
+
+{% block body %}
+    <section class="d-lg-flex justify-content-lg-center register-photo"
+             style="background: rgb(255,255,255);padding: 30px 0px;">
+        <!-- Start: Form Container -->
+        <div class="text-start border-success d-flex d-sm-flex d-md-flex d-lg-flex d-xl-flex d-xxl-flex flex-row justify-content-center justify-content-sm-center justify-content-md-center justify-content-lg-center justify-content-xl-center align-items-xl-center form-container"
+             style="border-color: rgb(255,255,255);height: 600px;margin-top: 50px;">
+            <form method="post" style="border-style: none;transform: scale(1);padding: 14px 60px;width: 444px;height: 600px;">
+                {% csrf_token %}
+                <img style="width: 300px; margin-top: 30px; margin-bottom: 30px" src="{% static 'portal/img/greener grass.png' %}" alt="">
+                <h2 class="text-center"><strong>Log in&nbsp;</strong>to your account</h2>
+                {% if form.errors %}
+                    <p style="color: red">Your username and password didn't match.</p>
+                {% endif %}
+                <div class="mb-3"> {{ form.username }}</div>
+                <div class="mb-3"> {{ form.password }}</div>
+                <input type="hidden" name="next" value="{{ next }}" />
+                <div class="mb-3">
+                    <button class="btn btn-primary border rounded-pill d-block w-100" type="submit"
+                            style="background: var(--bs-green);">Log In
+                    </button>
+                </div>
+                <a class="already" href="{% url 'register' %}">Don't have an account? Sign Up</a><!-- Start: Social Icons -->
+                <div class="social-icons" style="color: var(--bs-green);border-color: var(--bs-green);">
+                    <a href="{% url 'social:begin' 'facebook' %}"><i class="icon ion-social-facebook" style="color: var(--bs-green);border-color: var(--bs-green);"></i></a>
+                    <a href="{% url 'social:begin' 'google-oauth2' %}"><i class="icon ion-social-google" style="color: var(--bs-green);border-color: var(--bs-green);"></i></a>
+                    <a href="#"></a>
+                </div>
+                <!-- End: Social Icons -->
+            </form>
+        </div><!-- End: Form Container -->
+    </section><!-- End: Registration Form with Photo -->
+{% endblock %}

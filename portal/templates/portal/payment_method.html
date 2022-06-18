@@ -1,0 +1,286 @@
+{% extends 'portal/base.html' %}
+{% load static %}
+
+
+{% block title %}
+{% endblock title %}
+
+{% block main_content %}
+    <div class="main_content_iner overly_inner ">
+        <div class="container-fluid p-0 ">
+
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="white_card card_height_100 mb_30">
+
+
+                        <div class="white_card_header">
+                            <div class="white_box_tittle">
+                                <h4>Payment Method - MPESA</h4>
+                            </div>
+                        </div>
+                        <div class="white_card_body">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <label>Name (As in ID)</label>
+                                    <div class="common_input mb_20">
+                                        <input type="text" placeholder="ID Name">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="common_input mb_20">
+                                        <label>Phone Number</label>
+                                        <input type="tel" placeholder="Phone Number">
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="create_report_btn mt_30">
+                                        <a href="#" class="btn_1 w-100">SAVE</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="white_card_header">
+                            <div class="white_box_tittle">
+                                <h4>Payment Method - Bank</h4>
+                            </div>
+                        </div>
+                        <div class="white_card_body">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <label>Cardholder Name</label>
+                                    <div class="common_input mb_20">
+                                        <input type="text" placeholder="Cardholder Name">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="common_input mb_20">
+                                        <label>Card Number</label>
+                                        <input type="text" placeholder="Card Number">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <label>Expire Month</label>
+                                    <select class="nice_Select2 nice_Select_line wide mb_20" style="display: none;">
+                                        <option value="1">Expire Month</option>
+                                        <option value="1">jan</option>
+                                        <option value="1">Feb</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-6">
+                                    <label>Expire Year</label>
+                                    <select class="nice_Select2 nice_Select_line wide mb_20" style="display: none;">
+                                        <option value="1">Expire Year</option>
+                                        <option value="1">2020</option>
+                                        <option value="1">2022</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-6">
+                                    <label>CVV</label>
+                                    <div class="common_input ">
+                                        <input type="text" placeholder="CVV">
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="create_report_btn mt_30">
+                                        <a href="#" class="btn_1 w-100">SEND</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4">
+                    <div class="white_card card_height_100 mb_30">
+                        <div class="white_card_header">
+                            <div class="box_header m-0">
+                                <div class="main-title">
+                                    <h3 class="m-0">Exchange</h3>
+                                </div>
+                                <div class="header_more_tool">
+                                    <div class="dropdown">
+                                        <span class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown">
+                                            <i class="ti-more-alt"></i>
+                                        </span>
+                                        <div class="dropdown-menu dropdown-menu-right"
+                                             aria-labelledby="dropdownMenuButton">
+                                            <a class="dropdown-item" href="#"> <i class="ti-eye"></i>
+                                                Action</a>
+                                            <a class="dropdown-item" href="#"> <i class="ti-trash"></i>
+                                                Delete</a>
+                                            <a class="dropdown-item" href="#"> <i class="fas fa-edit"></i>
+                                                Edit</a>
+                                            <a class="dropdown-item" href="#"> <i class="ti-printer"></i>
+                                                Print</a>
+                                            <a class="dropdown-item" href="#"> <i
+                                                    class="fa fa-download"></i> Download</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="white_card_body">
+                            <div class="exchange_widget">
+                                <form name="myform" class="currency_validate">
+                                    <div class="form-group">
+                                        <label>Currency</label>
+                                        <div class="input-group ">
+                                            <select name="currency" class="form-control nice_Select">
+                                                <option data-display="Bitcoin" value="bitcoin">Bitcoin</option>
+                                                <option value="litecoin">Litecoin</option>
+                                            </select>
+                                            <input type="text" name="usd_amount" class="form-control"
+                                                   value="125.00 USD">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Payment Method</label>
+                                        <div class="input-group ">
+                                            <select name="currency" class="form-control nice_Select">
+                                                <option data-display="Bitcoin" value="bitcoin">Bitcoin</option>
+                                                <option value="litecoin">Litecoin</option>
+                                            </select>
+                                            <input type="text" name="usd_amount" class="form-control"
+                                                   value="125.00 USD">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Enter your amount</label>
+                                        <div class="input-group">
+                                            <input type="text" name="currency_amount" class="form-control"
+                                                   placeholder="0.0214 BTC">
+                                            <input type="text" name="usd_amount" class="form-control"
+                                                   placeholder="125.00 USD">
+                                        </div>
+                                        <div class="d-flex justify-content-between mt-3">
+                                            <p class="mb-0">Monthly Limit</p>
+                                            <h6 class="mb-0">$49750 remaining</h6>
+                                        </div>
+                                    </div>
+                                    <button type="submit" name="submit" class="btn_1 w-100">Exchange Now</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="white_card card_height_100 mb_30">
+                        <div class="white_card_header pb-0">
+                            <div class="white_box_tittle">
+                                <h4>Activities History</h4>
+                            </div>
+                        </div>
+                        <div class="white_card_body">
+                            <div class="QA_section">
+                                <div class="QA_table mb-0">
+
+                                    <table class="table lms_table_active2 ">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col">Crypto orders</th>
+                                            <th scope="col">Sender ID</th>
+                                            <th scope="col">Transaction ID</th>
+                                            <th scope="col">Time</th>
+                                            <th scope="col">Status</th>
+                                            <th scope="col">Amount</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td>
+                                                Buy Order
+                                            </td>
+                                            <td>
+                                                gdh-34um3bbj
+                                            </td>
+                                            <td>HJD9R034JNN3N43</td>
+                                            <td>10:23:45</td>
+                                            <td><a href="#" class="status_btn">completed</a></td>
+                                            <td>+0,041BTC</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Sell Order
+                                            </td>
+                                            <td>
+                                                gdh-34um3bbj
+                                            </td>
+                                            <td>HJD9R034JNN3N43</td>
+                                            <td>10:23:45</td>
+                                            <td><a href="#" class="status_btn">completed</a></td>
+                                            <td>+0,041BTC</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Exchange Order
+                                            </td>
+                                            <td>
+                                                gdh-34um3bbj
+                                            </td>
+                                            <td>HJD9R034JNN3N43</td>
+                                            <td>10:23:45</td>
+                                            <td><a href="#" class="status_btn">completed</a></td>
+                                            <td>+0,041BTC</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Buy Order
+                                            </td>
+                                            <td>
+                                                gdh-34um3bbj
+                                            </td>
+                                            <td>HJD9R034JNN3N43</td>
+                                            <td>10:23:45</td>
+                                            <td><a href="#" class="status_btn">completed</a></td>
+                                            <td>+0,041BTC</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Sell Order
+                                            </td>
+                                            <td>
+                                                gdh-34um3bbj
+                                            </td>
+                                            <td>HJD9R034JNN3N43</td>
+                                            <td>10:23:45</td>
+                                            <td><a href="#" class="status_btn">completed</a></td>
+                                            <td>+0,041BTC</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Exchange Order
+                                            </td>
+                                            <td>
+                                                gdh-34um3bbj
+                                            </td>
+                                            <td>HJD9R034JNN3N43</td>
+                                            <td>10:23:45</td>
+                                            <td><a href="#" class="status_btn">completed</a></td>
+                                            <td>+0,041BTC</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Buy Order
+                                            </td>
+                                            <td>
+                                                gdh-34um3bbj
+                                            </td>
+                                            <td>HJD9R034JNN3N43</td>
+                                            <td>10:23:45</td>
+                                            <td><a href="#" class="status_btn">completed</a></td>
+                                            <td>+0,041BTC</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock main_content %}
